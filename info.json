@@ -2,5 +2,7 @@
     "author":"Stefifox",
     "text":{
         "welcome":"Benvenuto"
-    }
+    },
+    "integrations":"https://t.me/PingPongPingBot",
+    "integrations_name":"Ping-Pong Bot"
 }

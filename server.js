@@ -5,6 +5,13 @@ const bodyParser = require("body-parser");
 
 const app = express()
 
+let con = mysql.createConnection({
+    host:"localhost",
+    user: "root",
+    password: "root",
+    database: "pingbot",
+})
+
 //Set ejs come view engine
 app.set("view engine", "ejs");
 
@@ -20,7 +27,14 @@ app.use(bodyParser.urlencoded({
 
 //Render index.ejs
 app.get("/", (req, res) => {
-    res.render("index", {"info":info})
+    con.query(`SELECT * FROM utente ORDER BY Messaggi DESC`, (err, res1) => {
+        if (err) throw err
+        res.render("index", {
+            "info": info,
+            "class": res1
+        })
+    })
+
 });
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')

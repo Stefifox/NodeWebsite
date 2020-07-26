@@ -12,8 +12,18 @@
 
 <body>
     <% if (info) { %>
-    <h1><%= info.text.welcome %></h1>
-    <h3>Website by <%= info.author %></h3>
+        <h1><%= info.text.welcome %></h1>
+        <h3>Website by <%= info.author %></h3>
+        <p>Integrations with <a href=<%=info.integrations%>><%=info.integrations_name%></a></p>
+    <% } %>
+    <br>
+    <br>
+    <h3>Top 10 Users</h3>
+    <% if (info) { %>
+        <p><%= class %></p>
+        <table>
+            
+        </table>
     <% } %>
 </body>
 
